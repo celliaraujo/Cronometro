@@ -11,17 +11,24 @@ class Program
     {
         Console.Clear();
         Console.WriteLine("------- Programa Cronômetro -------");
-        Console.WriteLine("-----------------------------------");
+        Console.WriteLine("===================================");
         Console.WriteLine("S = Segundo | 10s = 10 segundos |");
         Console.WriteLine("...................................");
         Console.WriteLine("M = Minuto | 1m = 1 minuto |");
         Console.WriteLine("...................................");
         Console.WriteLine("0 = Sair");
         Console.WriteLine("-----------------------------------");
-        Console.WriteLine("Quanto tempo deseja contar?");
+        Console.WriteLine("|   Quanto tempo deseja contar?   |");
         Console.WriteLine("-----------------------------------");
 
         string data = Console.ReadLine().ToLower();
+
+        char type = char.Parse(data.Substring(data.Length - 1, 1));
+
+        int time = int.Parse(data.Substring(0, data.Length - 1));
+
+        Console.WriteLine(type);
+        Console.WriteLine(time);
     }
 
     static void Start(int time)
