@@ -27,8 +27,18 @@ class Program
 
         int time = int.Parse(data.Substring(0, data.Length - 1));
 
-        Console.WriteLine(type);
-        Console.WriteLine(time);
+        int multiplier = 1;
+
+        if (type == 'm')
+            multiplier = 60;
+
+        if (time == 0)
+            System.Environment.Exit(0);
+
+        Start(time * multiplier);
+
+
+
     }
 
     static void Start(int time)
@@ -46,6 +56,8 @@ class Program
         Console.Clear();
         Console.WriteLine("Cronômetro finalizado...");
         Thread.Sleep(2500);
+
+        Menu();
 
     }
 }
